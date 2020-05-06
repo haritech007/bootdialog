@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>dialog</title>
+	<link rel="stylesheet" href="dist/css/bootstrap.css"></style>
+</head>
+<body>
+	
+	<button onclick="showDialog1()">Alert Modal</button>
+	<button onclick="showDialog2()">Save Modal</button>
+
+	<script type="text/javascript" src="dist/js/jquery.min.js"></script>
+	<script type="text/javascript" src="dist/js/bootstrap.js"></script>
+	<script type="text/javascript" src="dist/js/bootdialog.js"></script>
+	<script type="text/javascript">
+
+		
+		var dialog1 = new bootDialog({	
+							id: 'qo', 
+							heading: "Alert!", 
+							buttons: [
+								{ label: "Say Hi", class: "btn btn-primary", fn: function() {
+									alert("hi");
+								} },
+								{ label: "Cancel", class: "btn btn-secondary", fn: function(e) {
+									dialog1.hide();
+								} }
+							]
+						});
+
+		var dialog2 = new bootDialog({	
+							id: 'qo2', 
+							heading: "Save Details?", 
+							buttons: [
+								{ label: "Save", class: "btn btn-primary", fn: function() {
+									alert("Data Saved");
+								} },
+								{ label: "Exit", class: "btn btn-secondary", fn: function(e) {
+									dialog2.hide();
+								} }
+							]
+						});
+		
+		function showDialog1() {
+			dialog1.show();
+		}
+
+		function showDialog2() {
+			dialog2.show();
+		}
+		
+	</script>
+</body>
+</html>
